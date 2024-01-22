@@ -1,0 +1,12 @@
+sort1 uses: bubble sort
+
+How do you know?: It uses an approximately same time to sort random/reversed numbers, but uses a very short time to sort sorted numbers. The only algorithm whose sorting time will vary, given a fixed amount of numbers, is bubble sort.
+
+sort2 uses: merge sort
+
+How do you know?: It spents an approximately same amount of time (very short) to sort random/reversed/sorted numbers.
+
+sort3 uses: selection sort
+
+How do you know?: It spents a significantly longer time to sort sorted numbers, which is a feature of selection sort. Omega(n^2)
+
