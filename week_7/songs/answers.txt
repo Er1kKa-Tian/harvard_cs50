@@ -1,0 +1,3 @@
+How to characterize: analyse the moods reflected by each song and make an average weighted by their frequency of being listened.
+
+Why not representative: moods and music characteristics may not have one-to-one relationships. Moods characterize music tastes, but different moods can be projected to similar music characteristics, so we may not be able to retrive moods backwards.

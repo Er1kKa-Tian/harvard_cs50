@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // MCQ
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('#mcq0, #mcq2').forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        this.style.backgroundColor = 'red';
+                        var newLine = document.createElement('div');
+                        newLine.textContent = 'Incorrect';  // Set text content (optional)
+                        // Append the new div element after the button
+                        this.parentNode.appendChild(newLine);
+                    });
+                });
+                document.querySelector('#mcq1').addEventListener('click', function() {
+                    this.style.backgroundColor = 'green';
+                    var newLine = document.createElement('div');
+                    newLine.textContent = 'Correct!';  // Set text content (optional)
+                    // Append the new div element after the button
+                    this.parentNode.appendChild(newLine);
+                });
+            // Free response
+                document.querySelector('#q2submit').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var q2ans = parseInt(document.querySelector('#q2ans').value);
+                    if (!isNaN(q2ans) && q2ans === 94) {
+                        document.querySelector('#q2submit').style.backgroundColor = 'green';
+                        var newLine = document.createElement('div');
+                        newLine.textContent = 'Correct!';
+                        document.querySelector('#q2submit').parentNode.appendChild(newLine);
+                    }
+                    else {
+                        document.querySelector('#q2submit').style.backgroundColor = 'red';
+                        var newLine = document.createElement('div');
+                        newLine.textContent = 'Incorrect';  // Set text content (optional)
+                        // Append the new div element after the button
+                        document.querySelector('#q2submit').parentNode.appendChild(newLine);
+                    }
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    Fill in the gap: 114514 _______
+                </h3>
+                <button id="mcq0">9124123</button>
+                <button id="mcq1">1919810</button>
+                <button id="mcq2">9120321</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    TOGII has a _____mm main gun.
+                </h3>
+                <form>
+                    <input autocomplete="off" autofocus id="q2ans" type="number">
+                    <button id="q2submit" type="submit">Confirm</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

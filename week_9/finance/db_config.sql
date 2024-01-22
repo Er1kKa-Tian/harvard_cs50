@@ -1,0 +1,16 @@
+CREATE TABLE history (
+    hid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    uid INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    share NUMERIC NOT NULL,
+    price NUMERIC NOT NULL,
+    time DATETIME NOT NULL,
+    FOREIGN KEY(uid) REFERENCES users(id)
+);
+
+CREATE TABLE portfolio (
+    uid INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    share NUMERIC NOT NULL,
+    FOREIGN KEY(uid) REFERENCES users(id)
+);
